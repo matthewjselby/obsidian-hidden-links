@@ -1,0 +1,11 @@
+{
+	"id": "hidden-links",
+	"name": "Hidden Links",
+	"version": "1.0.0",
+	"minAppVersion": "1.0.0",
+	"description": "Enables creation of internal links that are hidden from the graph view.",
+	"author": "Matt Selby",
+	"authorUrl": "https://github.com/matthewjselby",
+	"fundingUrl": "",
+	"isDesktopOnly": false
+}
