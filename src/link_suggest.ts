@@ -28,11 +28,10 @@ export class LinkSuggest extends EditorSuggest<LinkSuggestion> {
 	onTrigger(cursor: EditorPosition, editor: Editor, file: TFile | null): EditorSuggestTriggerInfo | null {
 		this.matchLine = cursor.line;
 		let line = editor.getLine(cursor.line);
-		const lastWhiteSpace = /\s/g.exec(line.slice(0, cursor.ch).split("").reverse().join(""))
-		console.log(lastWhiteSpace)
+		const linkOpen = /\{\{/g.exec(line.slice(0, cursor.ch).split("").reverse().join(""))
 		let offset = 0
-		if (lastWhiteSpace != null) {
-			offset = cursor.ch - lastWhiteSpace.index - 1
+		if (linkOpen != null) {
+			offset = cursor.ch - linkOpen.index - 1
 			line = line.slice(offset)
 			console.log(line)
 		}
